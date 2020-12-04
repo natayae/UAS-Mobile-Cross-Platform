@@ -1,0 +1,7 @@
+{
+  "name": "uas-mobilecross-nataya",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
