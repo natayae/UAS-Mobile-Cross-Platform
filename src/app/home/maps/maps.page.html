@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title>Maps</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item *ngIf="checkIn === false">
+    <ion-button (click)="showCurrentLoc()" shape="round" color="tertiary">
+      <ion-icon name="locate-outline"></ion-icon>
+    </ion-button>
+    <ion-button slot="end" (click)="inputCheckIn()" color="tertiary">Check-in</ion-button>
+  </ion-item>
+  
+    <ion-item *ngIf="checkIn === true">
+      <form #form="ngForm">
+      <ion-input
+      placeholder="Where am I?"
+      name="place"
+      ngModel
+      #place = "ngModel"
+      required></ion-input>
+      
+      <ion-button [disabled]="!form.valid"
+      (click)="presentLoading(place)">OK</ion-button>
+      <ion-button color="danger" (click)="cancelCheckIn()">Cancel</ion-button>
+      </form>
+    </ion-item>
+  <div #map id="map"></div>
+</ion-content>

@@ -1,0 +1,65 @@
+<ion-content mode="ios">
+  <br>
+  <br>
+  <!--  Title and Subtitle  -->
+  <div class="ion-padding-start">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h1 class="ion-text-center" style="font-size: 40px;"><b>Login</b></h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <br>
+  <br>
+
+  <form #form="ngForm">
+
+    <ion-label position="fixed" class="ion-padding-start">Email</ion-label>
+    <ion-card class="input-field">
+      <ion-input class="ion-padding-start"
+                 style="font-size: 18px;"
+                 type="text"
+                 name="emails"
+                 ngModel
+                 #email = "ngModel"
+                 required></ion-input>
+    </ion-card>
+    <ion-item lines="none" *ngIf="!email.valid && email.touched">
+      <ion-note color="danger">Email can't be empty.</ion-note>
+    </ion-item>
+
+    <ion-label position="fixed" class="ion-padding-start">Password</ion-label>
+    <ion-card class="input-field">
+      <ion-input class="ion-padding-start"
+                 style="font-size: 18px;"
+                 type="password"
+                 name="password"
+                 ngModel
+                 #password = "ngModel"
+                 required></ion-input>
+    </ion-card>
+    <ion-item lines="none" *ngIf="!password.valid && password.touched">
+      <ion-note color="danger">Password can't be empty.</ion-note>
+    </ion-item>
+
+    <br>
+    <ion-row class="ion-padding-start">
+      <ion-col>
+        <ion-text>Don't have an account? </ion-text>
+        <a [href]="['/home/register']">Register</a>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit"
+                    color="tertiary"
+                    [disabled]="!form.valid"
+                    (click)="presentLoading(email, password)"
+                    expand="block">Login</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

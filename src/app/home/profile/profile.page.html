@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-grid style="text-align: center;">
+      <ion-row>
+        <ion-col>
+          <img src= "https://i.pinimg.com/originals/15/ed/c4/15edc4a12684b6706c96ef6609711ec5.png" width="400px">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h1><ion-text class="ion-text-center" >Name: <b>{{name}} </b></ion-text></h1>
+          <h1><ion-text class="name-profile ion-text-center" >Username: <b>{{usernames}} </b></ion-text></h1>
+          <h1><ion-text class="ion-text-center">Location: <b>{{place}} - {{checkinDate}}</b></ion-text></h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>
+  
+<ion-footer>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="logout()" expand="block" color="tertiary">Log out</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-footer>
+  
