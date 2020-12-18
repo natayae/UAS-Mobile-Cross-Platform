@@ -1,2 +1,2 @@
 # UAS-Mobile-Cross-Platform
-link hosting:
+link hosting: https://uas-natayaapriliani-25728.vercel.app/home/login
