@@ -1,0 +1,32 @@
+<ion-content class="ion-padding" mode="ios">
+  
+  <br><br><br>
+  <div class="ion-nowrap ion-text-center">
+    <img src="https://assets.stickpng.com/images/5a81af7d9123fa7bcc9b0793.png">
+  </div>
+
+  <!--  Title and Subtitle  -->
+  <div class="ion-padding-start ion-padding-top">
+    <h1 class="ion-text-center" style="font-size:40px;"><b>Email Verification</b></h1>
+    <br>
+    <br>
+    <h5 style="font-size: 25px;" class="ion-text-center">Please check your mail now and click the link for email verification.</h5>
+    <br><br>
+  </div>
+
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" expand="block" (click)="authService.SendVerificationMail()" expand="block" color="tertiary">
+          Resend Link
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" href="/home/login" expand="block" color="tertiary">Login</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
